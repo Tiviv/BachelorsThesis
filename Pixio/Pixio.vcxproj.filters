@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Windowing">
+      <UniqueIdentifier>{78b55646-7c0e-4047-800d-b4441b5683c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Windowing\SoftwareRender">
+      <UniqueIdentifier>{c44dcee3-8b76-4997-be42-553efe53c14c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Windowing">
+      <UniqueIdentifier>{80a2dd7d-bab0-4347-9beb-3f45ebcdeded}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Windowing\SoftwareRender">
+      <UniqueIdentifier>{d0a06268-5bdb-4714-80ed-649c918b07e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Windowing\OpenGL">
+      <UniqueIdentifier>{0c0cc3e1-56c5-4cca-87d5-871d9c4cddc5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Windowing\OpenGL">
+      <UniqueIdentifier>{3b2ff822-ce7c-4057-84d2-bd6a8383df4a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ShaderUtils">
+      <UniqueIdentifier>{f13d8cc0-b72b-4bae-99b2-165f4e16a95c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ShaderUtils">
+      <UniqueIdentifier>{6ad00e8a-15d7-45e8-a25d-d0686240e23f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CanvasFactory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IApplication.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ApplicationBase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CanvasAttributes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Windowing\SoftwareRender\SoftwareRenderWindow.h">
+      <Filter>Header Files\Windowing\SoftwareRender</Filter>
+    </ClInclude>
+    <ClInclude Include="Windowing\OpenGL\OpenGlWindow.h">
+      <Filter>Header Files\Windowing\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderUtils\Shader.h">
+      <Filter>Header Files\ShaderUtils</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CanvasFactory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ApplicationBase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CanvasAttributes.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Windowing\SoftwareRender\SoftwareRenderWindow.cpp">
+      <Filter>Source Files\Windowing\SoftwareRender</Filter>
+    </ClCompile>
+    <ClCompile Include="Windowing\OpenGL\OpenGLWindow.cpp">
+      <Filter>Source Files\Windowing\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderUtils\Shader.cpp">
+      <Filter>Source Files\ShaderUtils</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
