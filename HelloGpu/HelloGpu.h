@@ -20,8 +20,7 @@ private:
     const CanvasAttributes& attr;
 
 	float dummyHelperAngle;
-
-	Vec3Buffer objectToRender;
+	const float PI = 3.141592f;
 	ResourceManager graphicsResManager;
 
 	

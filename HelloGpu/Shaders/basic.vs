@@ -43,6 +43,6 @@ void main()
 	tmp.y += posOffset.y;
 	tmp.z += posOffset.z;
 
-    gl_Position = vec4(tmp, 1.0);
+    gl_Position = vec4(tmp, 0.5);
 }
 

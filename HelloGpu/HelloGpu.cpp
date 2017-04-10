@@ -12,20 +12,42 @@ void HelloGpu::onInit()
 {
 
 	glewInit();
-	graphicsResManager.loadShader();
+	graphicsResManager.addProgram();
+	
+	float side = 0.2f;
+	float offset = 0.2f;
+	Buffer verticesValues{ side , side, side,
+						 side,-side, side,
+						-side,-side, side,
+						-side, side, side,
+						 side, side,-side,
+						 side,-side,-side,
+						-side,-side,-side,
+						-side, side,-side
+	};
+	
+	Buffer colorValues{	0.5f, 0.5f, 0.5f,
+		0.5f, 0.0f, 0.99f,
+		0.99f, 0.6f, 0.7f,
+		0.5f, 0.5f, 0.5f,
+		0.5f, 0.0f, 0.99f,
+		0.99f, 0.6f, 0.7f,
+		0.5f, 0.5f, 0.5f,
+		0.5f, 0.0f, 0.99f,
+	};
 
-    GLuint positionLocation = glGetAttribLocation(graphicsResManager.getCurrentProgramId(), "vPosition");
-	GLuint colorLocation = glGetAttribLocation(graphicsResManager.getCurrentProgramId(), "vColor");
+	BufferObject vertices = BufferObject(verticesValues, 3);
+	BufferObject colors = BufferObject(colorValues, 3);
 
-	GLuint xAngle = glGetUniformLocation(graphicsResManager.getCurrentProgramId(), "xAngle");
-	GLuint yAngle = glGetUniformLocation(graphicsResManager.getCurrentProgramId(), "yAngle");
-	GLuint zAngle = glGetUniformLocation(graphicsResManager.getCurrentProgramId(), "zAngle");
+	VertexBuffers meshData;
+	meshData.push_back(vertices);
+	meshData.push_back(colors);
 
-    glUseProgram(graphicsResManager.getCurrentProgramId());
+	//dummyHelperAngle = 10.0f;
+	GLuint xAng = glGetUniformLocation(graphicsResManager.getCurrentProgramId(), "xAngle");
+	glUniform1f(xAng, 25.0f * PI / 180.0f);
 
-	dummyHelperAngle = 10.0f;
-
-	graphicsResManager.loadGeometry(objectToRender);
+	//graphicsResManager.loadGeometry(objectToRender);
 	
 	IndexBuffer index { 0, 3, 2, 0, 2, 1,   //front
 					    4, 0, 1, 4, 1, 5,   //right
@@ -41,22 +63,8 @@ void HelloGpu::onInit()
 						3, 7, 4, 0, 3, 4,   //top other
 						6, 2, 1, 5, 6, 1 }; //bottom other
 
-	Buffer tmp;
-	for (Vec3Buffer::const_iterator itr = objectToRender.cbegin(), stop = objectToRender.cend();
-		itr != stop;
-		++itr)
-	{
-		tmp.push_back((*itr).x);
-		tmp.push_back((*itr).y);
-		tmp.push_back((*itr).z);
-	}
-	//call ResourceManager to send and format the coordinates
-	graphicsResManager.createGLBuffer(graphicsResManager.vbIdPos, tmp);
-	graphicsResManager.enableAndFormatAttribArray(3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (GLvoid*)(0));
-	
-	graphicsResManager.enableAndFormatAttribArray(3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (GLvoid*)(3 * sizeof(float)));
-
-	graphicsResManager.createGLBuffer(graphicsResManager.ibIdIndices, index);
+	graphicsResManager.addMesh(1, meshData, index);
+	//graphicsResManager.addMesh()
 	
 	// Change point size
 	glPointSize(15);
@@ -74,7 +82,7 @@ void HelloGpu::onInit()
 	//Culling
 	glFrontFace(GL_CCW);
 	glEnable(GL_CULL_FACE);
-	glCullFace(GL_FRONT);
+	glCullFace(GL_BACK);
 
 	//Blending
 	glEnable(GL_BLEND);
@@ -93,8 +101,28 @@ void HelloGpu::onDestroy()
 void HelloGpu::onRender(float delta)
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	//use single GL call to draw vbo points
+
+	
+	static float t = 0.0f;
+	t += 0.0001;
+	GLuint yAng = glGetUniformLocation(graphicsResManager.getCurrentProgramId(), "yAngle");
+	GLuint offset = glGetUniformLocation(graphicsResManager.getCurrentProgramId(), "posOffset");
+
+	glUniform1f(yAng, t * -195.0f * PI / 180.0f);
+	glUniform3f(offset, 0.2f, 0.2f, 0.0f);
 	glDrawElements(GL_TRIANGLES, 72, GL_UNSIGNED_BYTE, (GLvoid*)(0));
+
+	glUniform1f(yAng, t * -50.0f * PI / 180.0f);
+	glUniform3f(offset, -0.2f, -0.2f, 0.0f);
+	glDrawElements(GL_TRIANGLES, 72, GL_UNSIGNED_BYTE, (GLvoid*)(0));
+
+	glUniform1f(yAng, t * -100.0f * PI / 180.0f);
+	glUniform3f(offset, -0.2f, 0.2f, 0.0f);
+	glDrawElements(GL_TRIANGLES, 72, GL_UNSIGNED_BYTE, (GLvoid*)(0));
+
+	
+	//use single GL call to draw vbo points
+	//glDrawElements(GL_TRIANGLES, 72, GL_UNSIGNED_BYTE, (GLvoid*)(0));
 }
 
 void HelloGpu::onMouseEvent(unsigned int x, unsigned int y, unsigned char button, unsigned char state, unsigned int modifiers)
@@ -102,10 +130,6 @@ void HelloGpu::onMouseEvent(unsigned int x, unsigned int y, unsigned char button
 	printf("OnMouseEvent \n");
 	Buffer tmp;
 	dummyHelperAngle += 0.005;
-
-	graphicsResManager.rotateGeometry(objectToRender, dummyHelperAngle, x_axis);
-	graphicsResManager.rotateGeometry(objectToRender, dummyHelperAngle, y_axis);
-
 }
 
 void HelloGpu::onKeyboardEvent(unsigned char c, unsigned char state, unsigned int modifiers)

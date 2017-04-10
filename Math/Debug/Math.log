@@ -1,0 +1,7 @@
+﻿  Vector.cpp
+g:\tu\tut sem8\дипломна работа\соурце\new\pixio\math\vec2.h(82): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+g:\tu\tut sem8\дипломна работа\соурце\new\pixio\math\vec3.h(79): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+g:\tu\tut sem8\дипломна работа\соурце\new\pixio\math\vec3.h(86): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+g:\tu\tut sem8\дипломна работа\соурце\new\pixio\math\vec3.h(93): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+g:\tu\tut sem8\дипломна работа\соурце\new\pixio\math\vec3.h(104): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  Math.vcxproj -> G:\TU\TUT SEM8\дипломна работа\Соурце\NEW\Pixio\Debug\Math.lib

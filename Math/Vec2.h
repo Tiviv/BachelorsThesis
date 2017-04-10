@@ -1,4 +1,5 @@
 #pragma once
+#include <math.h>
 
 class Vec2
 {
@@ -75,6 +76,17 @@ public:
 	{
 		return ((x*x) + (y*y));
 	}
+
+	inline Vec2 toPolar() const
+	{
+		return Vec2(sqrt(x*x + y*y), tanf((y / x)));
+	}
+
+	inline Vec2 toCartesian() const
+	{
+		return Vec2(x * cosf(y), x * sinf(y));
+	}
+
 
 	float x;
 	float y;

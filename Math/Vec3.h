@@ -12,26 +12,6 @@ public:
 	{
 	}
 
-	inline friend Vec3 operator+(const Vec3&  lhs, const Vec3&  rhs)
-	{
-		return Vec3(lhs.x + rhs.x, lhs.y + rhs.y, lhs.z + rhs.z);
-	}
-
-	inline friend Vec3 operator-(const Vec3&  lhs, const Vec3&  rhs)
-	{
-		return Vec3(lhs.x - rhs.x, lhs.y - rhs.y, lhs.z - rhs.z);
-	}
-
-	inline friend Vec3 operator*(const Vec3&  lhs, const Vec3& rhs)
-	{
-		return Vec3(lhs.x * rhs.x, lhs.y * rhs.y, lhs.z * rhs.z);
-	}
-
-	inline friend Vec3 operator*(const Vec3&  lhs, float rhs)
-	{
-		return Vec3(lhs.x + rhs, lhs.y + rhs, lhs.z + rhs);
-	}
-
 	inline Vec3& operator=(const Vec3&  rhs)
 	{
 		x = rhs.x;
@@ -87,6 +67,11 @@ public:
 		return (x*x + y*y + z*z);
 	}
 
+	inline float length()
+	{
+		return sqrtf(lengthSquared());
+	}
+
 	inline Vec3 around_X_axis(const float angle) const
 	{
 		return Vec3(x,
@@ -107,6 +92,28 @@ public:
 			x * sin(angle) + y * cos(angle),
 			z);
 	}
+
+
+	inline Vec3 toSpherical() const
+	{
+		// x - radius 
+		// y - inclination  
+		// z - azimuth
+		return Vec3((sqrtf(x*x + y*y + z*z)),
+					(atan(sqrt(x*x + y*y)/z)),
+					(atan(y/z)));
+	}
+
+	inline Vec3 toCartesian() const
+	{
+		// x - radius 
+		// y - inclination  
+		// z - azimuth
+		return Vec3((x * sinf(y) * cosf(z)),
+					(x * sinf(y) * sinf(z)), 
+					(x * cosf(y)));
+	}
+
 	float x;
 	float y;
 	float z;
