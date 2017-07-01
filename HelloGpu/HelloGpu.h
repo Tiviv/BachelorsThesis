@@ -1,8 +1,8 @@
 #pragma once
+#include "Texture.h"
 #include "ResourceManager.h"
 #include "Pixio/CanvasFactory.h"
 #include "Pixio/ApplicationBase.h"
-
 #include <GL/glew.h>
 
 class HelloGpu : public ApplicationBase

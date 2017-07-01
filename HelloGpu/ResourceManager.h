@@ -8,6 +8,7 @@ public:
 	ResourceManager();
 	~ResourceManager();
 
+	void addMesh(unsigned int id, const VertexBuffers& vertexBuffers);
 	void addMesh(unsigned int id, const VertexBuffers& vertexBuffers, const IndexBuffer& indexBuffer);
 	void removeMesh(unsigned int id);	
 

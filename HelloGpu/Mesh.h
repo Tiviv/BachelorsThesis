@@ -10,7 +10,8 @@ typedef std::vector<float> Buffer;
 enum BufferType
 {
 	vertices,
-	colors
+	colors,
+	textureCoords
 };
 
 struct BufferObject
@@ -41,6 +42,7 @@ public:
 	~Mesh();
 
 	void initialize(unsigned int id, const VertexBuffers& vertexBuffers, const IndexBuffer& indexBuffer);
+	void initialize(unsigned int id, const VertexBuffers& vertexBuffers);
 	void rotate(const float angle, axis axis);
 	void move();
 private:

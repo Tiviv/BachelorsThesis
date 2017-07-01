@@ -10,11 +10,10 @@ Mesh::~Mesh()
 
 }
 
-void Mesh::initialize(unsigned int id, const VertexBuffers& vertexBuffers, const IndexBuffer& indexBuffer)
+void Mesh::initialize(unsigned int id, const VertexBuffers& vertexBuffers)
 {
 	meshId = id;
 	meshBuffers = vertexBuffers;
-	meshIndices = indexBuffer;
 
 	for (int i = 0; i < vertexBuffers.size(); i++)
 	{
@@ -22,7 +21,13 @@ void Mesh::initialize(unsigned int id, const VertexBuffers& vertexBuffers, const
 		createGLBuffer(vboId.at(i), vertexBuffers.at(i).vertices);
 		enableAndFormatAttribArray(vertexBuffers.at(i).componentsCount, GL_FLOAT, GL_FALSE, vertexBuffers.at(i).componentsCount * sizeof(float), (GLvoid*)(0));
 	}
+}
 
+void Mesh::initialize(unsigned int id, const VertexBuffers& vertexBuffers, const IndexBuffer& indexBuffer)
+{
+	initialize(id, vertexBuffers);
+
+	meshIndices = indexBuffer;
 	createGLBuffer(indexId, indexBuffer);
 
 }

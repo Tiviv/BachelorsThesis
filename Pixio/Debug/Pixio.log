@@ -1,35 +1,3 @@
-﻿  SoftwareRenderWindow.cpp
-g:\tu\tut sem8\дипломна работа\соурце\new\pixio\math\vec2.h(82): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-g:\tu\tut sem8\дипломна работа\соурце\new\pixio\math\vec3.h(79): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-g:\tu\tut sem8\дипломна работа\соурце\new\pixio\math\vec3.h(86): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-g:\tu\tut sem8\дипломна работа\соурце\new\pixio\math\vec3.h(93): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-g:\tu\tut sem8\дипломна работа\соурце\new\pixio\math\vec3.h(104): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-  OpenGLWindow.cpp
-g:\tu\tut sem8\дипломна работа\соурце\new\pixio\math\vec2.h(82): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-g:\tu\tut sem8\дипломна работа\соурце\new\pixio\math\vec3.h(79): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-g:\tu\tut sem8\дипломна работа\соурце\new\pixio\math\vec3.h(86): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-g:\tu\tut sem8\дипломна работа\соурце\new\pixio\math\vec3.h(93): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-g:\tu\tut sem8\дипломна работа\соурце\new\pixio\math\vec3.h(104): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-  Shader.cpp
-  CanvasFactory.cpp
-g:\tu\tut sem8\дипломна работа\соурце\new\pixio\math\vec2.h(82): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-g:\tu\tut sem8\дипломна работа\соурце\new\pixio\math\vec3.h(79): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-g:\tu\tut sem8\дипломна работа\соурце\new\pixio\math\vec3.h(86): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-g:\tu\tut sem8\дипломна работа\соурце\new\pixio\math\vec3.h(93): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-g:\tu\tut sem8\дипломна работа\соурце\new\pixio\math\vec3.h(104): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-  CanvasAttributes.cpp
-g:\tu\tut sem8\дипломна работа\соурце\new\pixio\math\vec2.h(82): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-g:\tu\tut sem8\дипломна работа\соурце\new\pixio\math\vec3.h(79): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-g:\tu\tut sem8\дипломна работа\соурце\new\pixio\math\vec3.h(86): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-g:\tu\tut sem8\дипломна работа\соурце\new\pixio\math\vec3.h(93): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-g:\tu\tut sem8\дипломна работа\соурце\new\pixio\math\vec3.h(104): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-  ApplicationBase.cpp
-g:\tu\tut sem8\дипломна работа\соурце\new\pixio\math\vec2.h(82): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-g:\tu\tut sem8\дипломна работа\соурце\new\pixio\math\vec3.h(79): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-g:\tu\tut sem8\дипломна работа\соурце\new\pixio\math\vec3.h(86): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-g:\tu\tut sem8\дипломна работа\соурце\new\pixio\math\vec3.h(93): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-g:\tu\tut sem8\дипломна работа\соурце\new\pixio\math\vec3.h(104): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-  Generating Code...
-glew32.lib(glew32.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in freeglut.lib(freeglut.dll); second definition ignored
+﻿glew32.lib(glew32.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in freeglut.lib(freeglut.dll); second definition ignored
 glew32.lib(glew32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
-  Pixio.vcxproj -> G:\TU\TUT SEM8\дипломна работа\Соурце\NEW\Pixio\Debug\Pixio.lib
+  Pixio.vcxproj -> G:\TU\TUT SEM8\Diplomna\Source\NEW\Clean\Pixio\Debug\Pixio.lib

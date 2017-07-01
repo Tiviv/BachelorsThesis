@@ -1,5 +1,3 @@
 ﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(392,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (HelloGpu.vcxproj).  This can lead to incorrect clean and rebuild behavior.
   HelloGpu.cpp
-g:\tu\tut sem8\дипломна работа\соурце\new\pixio\hellogpu\hellogpu.cpp(107): warning C4305: '+=': truncation from 'double' to 'float'
-g:\tu\tut sem8\дипломна работа\соурце\new\pixio\hellogpu\hellogpu.cpp(132): warning C4305: '+=': truncation from 'double' to 'float'
-  HelloGpu.vcxproj -> G:\TU\TUT SEM8\дипломна работа\Соурце\NEW\Pixio\Debug\Engine.exe
+  HelloGpu.vcxproj -> G:\TU\TUT SEM8\Diplomna\Source\NEW\Clean\Pixio\Debug\Engine.exe

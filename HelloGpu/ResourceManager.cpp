@@ -13,6 +13,13 @@ ResourceManager::~ResourceManager()
 	glDeleteProgram(currentProgramId);
 }
 
+void ResourceManager::addMesh(unsigned int id, const VertexBuffers& vertexBuffers)
+{
+	Mesh newMesh;
+	newMesh.initialize(id, vertexBuffers);
+	meshes.insert_or_assign(id, newMesh);
+
+}
 
 void ResourceManager::addMesh(unsigned int id, const VertexBuffers& vertexBuffers, const IndexBuffer& indexBuffer)
 {
