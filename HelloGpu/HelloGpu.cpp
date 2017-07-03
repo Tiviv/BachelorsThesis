@@ -38,7 +38,7 @@ void HelloGpu::onInit()
 	
 	graphicsResManager.addMesh(1, meshData);
 	
-	Texture texture("G:/TU/TUT SEM8/Diplomna/Source/NEW/Clean/Pixio/UseCase.png");
+	Texture texture("G:/TU/TUT SEM8/Diplomna/Source/NEW/Clean/Pixio/Assets/TeacherStudent.png");
 	glEnable(GL_TEXTURE_2D);
 	texture.Bind(0);
 	// Change point size
@@ -49,7 +49,7 @@ void HelloGpu::onInit()
 	//Z-buffer
 	//glEnable(GL_DEPTH_TEST);
 	//glDepthFunc(GL_GEQUAL);
-	glClearDepth(-1.0);
+	//glClearDepth(-1.0);
 
 	// Color buffer
 	glClearColor(0.0f, 0.0f, 1.0f, 1.0f);
@@ -86,18 +86,8 @@ void HelloGpu::onRender(float delta)
 
 void HelloGpu::onMouseEvent(unsigned int x, unsigned int y, unsigned char button, unsigned char state, unsigned int modifiers)
 {
-	if (y > attr.size.y/2)
-	{
-		printf("Geometriq");
-	}
-	else if (y < attr.size.y / 2)
-	{
-		printf("Geometriqqq!!");
-	}
-	else
-	{
-		printf("You have the ZERO!!!");
-	}
+	if(state == 0)
+	stateMachine.goToNextState(x, y, attr.size.x, attr.size.y);
 }
 
 void HelloGpu::onKeyboardEvent(unsigned char c, unsigned char state, unsigned int modifiers)
